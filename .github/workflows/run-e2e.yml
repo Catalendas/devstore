@@ -1,6 +1,6 @@
 name: Run E2E tests
 
-on: run
+on: push
 
 jobs: 
   cypres-run:
