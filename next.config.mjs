@@ -12,9 +12,6 @@ const nextConfig = {
             hostname: "github.com"
         }]
     },
-    experimental: {
-        missingSuspenseWithCSRBailout: false,
-    },
 };
 
 export default nextConfig;
