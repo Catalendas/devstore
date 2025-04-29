@@ -1,0 +1,24 @@
+name: Run E2E tests
+
+on: run
+
+jobs: 
+  cypres-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@3
+        with: 
+          node-version: 20
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        env: 
+          APP_URL: "http://localhost:3000"
+          NEXT_PUBLIC_API_BASE_URL: "https://devstore-api-weld.vercel.app"
+        with:
+          build: npm run build
+          start: npm start
